@@ -33,45 +33,43 @@ function renderLicenseBadge(license) {
 
 function renderLicenseLink(license) {
   switch (license) {
-    case 'MIT':
-      return 'https://opensource.org/licenses/MIT';
-    case 'Apache-2.0':
-      return 'https://opensource.org/licenses/Apache-2.0';
-    case 'GPL-3.0':
-      return 'https://www.gnu.org/licenses/gpl-3.0';
-    case 'BSD-3-Clause':
-      return 'https://opensource.org/licenses/BSD-3-Clause';
-    case 'Unlicense':
-      return 'http://unlicense.org/';
-    case 'Mozilla Public License 2.0':
-      return 'https://opensource.org/licenses/MPL-2.0';
-    case 'GNU AGPLv3':
-      return 'https://www.gnu.org/licenses/agpl-3.0';
-    case 'GNU GPLv3':
-      return 'https://www.gnu.org/licenses/gpl-3.0';
-    case 'GNU LGPLv3':
-      return 'https://www.gnu.org/licenses/lgpl-3.0';
-    case 'Eclipse Public License 1.0':
-      return 'https://www.eclipse.org/legal/epl-v10.html';
-    case 'GNU FDL':
-      return 'https://www.gnu.org/licenses/fdl-1.3';
-    case 'ISC':
-      return 'https://opensource.org/licenses/ISC';
-    case 'Creative Commons Zero v1.0 Universal':
-      return 'http://creativecommons.org/publicdomain/zero/1.0/';
+    case "MIT":
+      return "https://opensource.org/licenses/MIT";
+    case "Apache-2.0":
+      return "https://opensource.org/licenses/Apache-2.0";
+    case "GPL-3.0":
+      return "https://www.gnu.org/licenses/gpl-3.0";
+    case "BSD-3-Clause":
+      return "https://opensource.org/licenses/BSD-3-Clause";
+    case "Unlicense":
+      return "http://unlicense.org/";
+    case "Mozilla Public License 2.0":
+      return "https://opensource.org/licenses/MPL-2.0";
+    case "GNU AGPLv3":
+      return "https://www.gnu.org/licenses/agpl-3.0";
+    case "GNU GPLv3":
+      return "https://www.gnu.org/licenses/gpl-3.0";
+    case "GNU LGPLv3":
+      return "https://www.gnu.org/licenses/lgpl-3.0";
+    case "Eclipse Public License 1.0":
+      return "https://www.eclipse.org/legal/epl-v10.html";
+    case "GNU FDL":
+      return "https://www.gnu.org/licenses/fdl-1.3";
+    case "ISC":
+      return "https://opensource.org/licenses/ISC";
+    case "Creative Commons Zero v1.0 Universal":
+      return "http://creativecommons.org/publicdomain/zero/1.0/";
     default:
-      return '';
+      return "";
   }
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
 function renderLicenseSection(license) {
   const licenseBadge = renderLicenseBadge(license);
   const licenseLink = renderLicenseLink(license);
 
   if (!licenseBadge && !licenseLink) {
-    return '';
+    return "";
   }
 
   const licenseSection = `
@@ -85,12 +83,49 @@ This project is licensed under the [${license} License](${licenseLink}).
   return licenseSection;
 }
 
-
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  const licenseSection = renderLicenseSection(data.license);
+
   return `# ${data.title}
 
+${licenseSection}
+
+## Description
+
+${data.description}
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
+## Installation
+
+${data.installation}
+
+## Usage
+
+${data.usage}
+
+## Contributing
+
+${data.contributing}
+
+## Tests
+
+${data.tests}
+
+## Questions
+
+If you have any questions, feel free to reach out:
+
+- GitHub: [${data.githubUsername}](https://github.com/${data.githubUsername})
+- Email: ${data.email}
 `;
 }
 
-module.exports = {generateMarkdown};
+module.exports = { generateMarkdown };
