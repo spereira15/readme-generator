@@ -83,7 +83,6 @@ This project is licensed under the [${license} License](${licenseLink}).
   return licenseSection;
 }
 
-// TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   const licenseSection = renderLicenseSection(data.license);
 
