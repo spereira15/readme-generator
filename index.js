@@ -1,4 +1,6 @@
 // TODO: Include packages needed for this application
+const fs = require('fs')
+const inquirer = require('inquirer@8.2.4')
 
 // TODO: Create an array of questions for user input
 const questions = [];
