@@ -21,7 +21,7 @@ Made for the Week 9 Challenge of the UM Coding Bootcamp.
 
 ## Installation
 
-To use the README Generator, follow these steps:
+To install the README Generator, follow these steps:
 
 1. Clone the repository to your local machine.
 
@@ -31,7 +31,13 @@ To use the README Generator, follow these steps:
 
 ## Usage
 
-Once the dependancies are installed, simple start the project by running 'node index.js'. Answer the questions and your README will be generated!
+Once the dependancies are installed:
+
+1. Start the project by running 'node index.js'. 
+
+2. Answer the questions.
+
+3. Voila! Your README has been generated.
 
 ## Contributing
 
@@ -40,7 +46,7 @@ Contributions are welcome!
 ## Tests
 
 To test this application, follow [Installation](#installation) and [Usage](#usage) instructions.
- 
+
 ## Questions
 
 If you have any questions, feel free to reach out:
