@@ -1,3 +1,4 @@
+// Function to render LicenseBadge based on License input
 function renderLicenseBadge(license) {
   switch (license) {
     case "MIT":
@@ -31,6 +32,7 @@ function renderLicenseBadge(license) {
   }
 }
 
+// Function to render function link
 function renderLicenseLink(license) {
   switch (license) {
     case "MIT":
@@ -64,6 +66,7 @@ function renderLicenseLink(license) {
   }
 }
 
+// This function combines License link and License Badge and generates the entire License section
 function renderLicenseSection(license) {
   const licenseBadge = renderLicenseBadge(license);
   const licenseLink = renderLicenseLink(license);
@@ -83,6 +86,7 @@ This project is licensed under the [${license} License](${licenseLink}).
   return licenseSection;
 }
 
+// Function generates markdown README file based on user input, using renderLicenseSection function as well
 function generateMarkdown(data) {
   const licenseSection = renderLicenseSection(data.license);
 
@@ -127,4 +131,5 @@ If you have any questions, feel free to reach out:
 `;
 }
 
+// Exports the generateMarkdown function to use it in index.js
 module.exports = { generateMarkdown };

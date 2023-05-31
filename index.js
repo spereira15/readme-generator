@@ -1,7 +1,9 @@
+// Packages
 const fs = require("fs");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
+// Array with inquirer questions
 const questions = [
   {
     type: "input",
@@ -66,6 +68,7 @@ const questions = [
   },
 ];
 
+// Function to write file
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {
     if (err) {
@@ -76,6 +79,7 @@ function writeToFile(fileName, data) {
   });
 }
 
+// Function to initialize app
 function init() {
   inquirer
     .prompt(questions)
@@ -88,4 +92,5 @@ function init() {
     });
 }
 
+// Calling function to initialize app
 init();
